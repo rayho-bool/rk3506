@@ -1,0 +1,49 @@
+# ---- 厂商资料：体积大，永不入库（几百 MB ~ GB 级）----
+/0/
+
+# ---- 工具产生的权限修复报告 ----
+/.dsh-acl/
+
+# ---- 构建产物 ----
+build/
+output/
+out/
+*.o
+*.ko
+*.mod
+*.mod.c
+*.symvers
+*.order
+*.cmd
+*.d
+*.img
+*.bin
+*.dtb
+*.dtbo
+*.a
+*.so
+
+# ---- 日志与临时文件 ----
+*.log
+*.tmp
+core
+.cache/
+*.bak
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+
+# ---- 敏感信息 ----
+*.env
+secrets.*
