@@ -128,12 +128,27 @@ env: <环境变更>              # env: apt 源改 old-releases
 
 ### 备份（重要）
 
-VM 会坏、硬盘会坏。**每周日推一次远端**：
+VM 会坏、硬盘会坏。本仓库已绑 **三个远端**：
 
-```bash
-git remote add origin <你的 Gitee/GitHub 私有仓地址>
-git push -u origin master
+| 名字 | 位置 | 用途 |
+| --- | --- | --- |
+| `origin` | <https://gitee.com/rayho_bool/rk3506.git> | 主，日常 push；本地 `master` 跟踪它 |
+| `github` | <https://github.com/rayho-bool/rk3506.git> | 平台备份（**必须保持私有**） |
+| `backup` | `D:\rk3506-backup.git`（本机裸仓库） | 离线备份，不依赖网络 |
+
+每周日推一次：
+
+```powershell
+git push origin master --tags
+git push github master --tags
+git push backup master --tags
 ```
+
+三条规则：
+
+1. **别对两个远端都 `push --force`。** force 只影响你指定的那一个，但两边历史一旦分叉，补救很麻烦
+2. **分叉了先看再动**：`git fetch --all` → `git log --graph --all`，确认哪边是你想要的
+3. **填 IP / 密码之前，确认 `github` 那个仓是私有的。** 公开仓里的敏感信息删不干净（会被爬、被 fork）
 
 ---
 
