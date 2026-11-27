@@ -132,7 +132,7 @@ VM 会坏、硬盘会坏。**每周日推一次远端**：
 
 ```bash
 git remote add origin <你的 Gitee/GitHub 私有仓地址>
-git push -u origin main
+git push -u origin master
 ```
 
 ---
